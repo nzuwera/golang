@@ -24,5 +24,5 @@ func sayHello() {
 
 	// Pointers = Memory address of a variable "name"
 	namePointer := &name
-	fmt.Println("This is the momery address of varialbe 'name'", namePointer)
+	fmt.Println("This is the momery address of varialbe 'name'", namePointer, "and the value of 'name' is ", *namePointer)
 }
