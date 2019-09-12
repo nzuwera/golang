@@ -13,7 +13,7 @@ func main() {
 
 	/* calling a function to get max value */
 	ret = max(a, b)
-	fmt.Println("Max value is : %d\n", ret)
+	fmt.Println("Max value is : ", ret)
 
 	/* calling a swap function */
 	c, d := swap("Mahesh", "Kumar")
