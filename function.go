@@ -23,8 +23,7 @@ func main() {
 	fmt.Println(c, d)
 
 	/*
-		03 - function closure:
-		Declare a function as variable
+		03 - Declare a function as variable
 	*/
 
 	getSquareRoot := func(x float64) float64 {
@@ -32,6 +31,12 @@ func main() {
 	}
 
 	fmt.Println(getSquareRoot(9))
+
+	/*
+		Function Methods
+	*/
+	circle := Circle{x: 0, y: 0, radius: 5}
+	fmt.Printf("Circle area: %f", circle.area())
 
 }
 
@@ -57,4 +62,17 @@ func max(num1, num2 int) int {
 */
 func swap(x, y string) (string, string) {
 	return y, x
+}
+
+/*
+	Function Methods
+*/
+/* define a circle */
+type Circle struct {
+	x, y, radius float64
+}
+
+/* define a method for circle */
+func (circle Circle) area() float64 {
+	return math.Pi * circle.radius * circle.radius
 }
