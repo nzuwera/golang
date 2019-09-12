@@ -1,7 +1,10 @@
 package main
 
 // import package
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 // Main function
 func main() {
@@ -18,6 +21,18 @@ func main() {
 	/* calling a swap function */
 	c, d := swap("Mahesh", "Kumar")
 	fmt.Println(c, d)
+
+	/*
+		03 - function closure:
+		Declare a function as variable
+	*/
+
+	getSquareRoot := func(x float64) float64 {
+		return math.Sqrt(x)
+	}
+
+	fmt.Println(getSquareRoot(9))
+
 }
 
 /*
