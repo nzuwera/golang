@@ -1,29 +1,45 @@
 package main
 
-
 // import package
-import (
-	"fmt"
-	"reflect"
-	"runtime"
-)
-
-// Global variables
-var currentOs = runtime.GOOS
+import "fmt"
 
 // Main function
 func main() {
-	sayHellos()
+
+	/* local variable definition */
+	var a int = 100
+	var b int = 200
+	var ret int
+
+	/* calling a function to get max value */
+	ret = max(a, b)
+	fmt.Println("Max value is : %d\n", ret)
+
+	/* calling a swap function */
+	c, d := swap("Mahesh", "Kumar")
+	fmt.Println(c, d)
 }
 
-// User defined function
-func sayHellos() {
-	// variable definition inside a function
-	name := "Gilbert"
-	fmt.Println("My name is ", name, " is Type of ", reflect.TypeOf(name))
-	fmt.Println("Am using ", currentOs, " as OS, which is Type of ", reflect.TypeOf(currentOs))
+/*
+	01 - Calling a Function:
+	function returning the max between two numbers
+*/
+func max(num1, num2 int) int {
+	/* local variable declaration */
+	var result int
 
-	// Pointers = Memory address of a variable "name"
-	namePointer := &name
-	fmt.Println("This is the momery address of varialbe 'name'", namePointer, "and the value of 'name' is ", *namePointer)
+	if num1 > num2 {
+		result = num1
+	} else {
+		result = num2
+	}
+	return result
+}
+
+/*
+	02 - Returning multiple values from Function:
+	function which swap two given string
+*/
+func swap(x, y string) (string, string) {
+	return y, x
 }
